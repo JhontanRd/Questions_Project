@@ -1,4 +1,5 @@
-﻿namespace QuestionsSolution
+﻿
+namespace QuestionsSolution
 {
     partial class LoginScreen
     {
@@ -30,9 +31,9 @@
         {
             PtbLogo = new PictureBox();
             LblUser = new Label();
-            textBox1 = new TextBox();
+            TxtUser = new TextBox();
             LblPassword = new Label();
-            textBox2 = new TextBox();
+            TxtPassword = new TextBox();
             BtnAccess = new Button();
             BtnCreateUser = new Button();
             ((System.ComponentModel.ISupportInitialize)PtbLogo).BeginInit();
@@ -59,13 +60,13 @@
             LblUser.TabIndex = 1;
             LblUser.Text = "Login:";
             // 
-            // textBox1
+            // TxtUser
             // 
-            textBox1.Location = new Point(269, 281);
-            textBox1.MaxLength = 30;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(250, 29);
-            textBox1.TabIndex = 2;
+            TxtUser.Location = new Point(269, 281);
+            TxtUser.MaxLength = 30;
+            TxtUser.Name = "TxtUser";
+            TxtUser.Size = new Size(250, 29);
+            TxtUser.TabIndex = 2;
             // 
             // LblPassword
             // 
@@ -77,14 +78,14 @@
             LblPassword.TabIndex = 3;
             LblPassword.Text = "Senha:";
             // 
-            // textBox2
+            // TxtPassword
             // 
-            textBox2.Location = new Point(269, 348);
-            textBox2.MaxLength = 16;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(250, 29);
-            textBox2.TabIndex = 4;
-            textBox2.UseSystemPasswordChar = true;
+            TxtPassword.Location = new Point(269, 348);
+            TxtPassword.MaxLength = 16;
+            TxtPassword.Name = "TxtPassword";
+            TxtPassword.Size = new Size(250, 29);
+            TxtPassword.TabIndex = 4;
+            TxtPassword.UseSystemPasswordChar = true;
             // 
             // BtnAccess
             // 
@@ -96,6 +97,7 @@
             BtnAccess.TabIndex = 5;
             BtnAccess.Text = "Entrar";
             BtnAccess.UseVisualStyleBackColor = true;
+            BtnAccess.Click += BtnAccess_Click_1;
             // 
             // BtnCreateUser
             // 
@@ -116,9 +118,9 @@
             ClientSize = new Size(784, 461);
             Controls.Add(BtnCreateUser);
             Controls.Add(BtnAccess);
-            Controls.Add(textBox2);
+            Controls.Add(TxtPassword);
             Controls.Add(LblPassword);
-            Controls.Add(textBox1);
+            Controls.Add(TxtUser);
             Controls.Add(LblUser);
             Controls.Add(PtbLogo);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -134,13 +136,18 @@
             PerformLayout();
         }
 
+        private void BtnAccess_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private PictureBox PtbLogo;
         private Label LblUser;
-        private TextBox textBox1;
+        private TextBox TxtUser;
         private Label LblPassword;
-        private TextBox textBox2;
+        private TextBox TxtPassword;
         private Button BtnAccess;
         private Button BtnCreateUser;
     }
