@@ -14,13 +14,15 @@ namespace QuestionsSolution.Models
 
         public User(string userLogin, string userPassword)
         {
-            userLogin = UserLogin;
-            userPassword = UserPassword;
+            UserLogin = userLogin;
+            UserPassword = userPassword;
         }
 
+        /*
         public override string ToString()
         {
             return "User created";
         }
+        */
     }
 }
