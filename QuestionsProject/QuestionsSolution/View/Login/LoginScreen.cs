@@ -2,7 +2,6 @@ using QuestionsSolution.Controllers;
 using QuestionsSolution.Controllers.Exceptions;
 using QuestionsSolution.Models;
 using QuestionsSolution.Validators;
-using QuestionsSolution.Validators.IValidators;
 
 namespace QuestionsSolution
 {
