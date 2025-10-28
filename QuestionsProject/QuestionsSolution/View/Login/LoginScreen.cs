@@ -11,7 +11,6 @@ namespace QuestionsSolution
         public LoginScreen()
         {
             InitializeComponent();
-
         }
 
         private void BtnAccess_Click_1(object sender, EventArgs e)
@@ -25,7 +24,7 @@ namespace QuestionsSolution
             }
             catch (UserExceptions uX)
             {
-                MessageBox.Show(uX.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(uX.Message, "Erro na operação ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

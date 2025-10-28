@@ -18,6 +18,9 @@ namespace QuestionsSolution.Controllers
         {
             if (_userValidator.ValidateLogin(user.UserLogin))
                 throw new UserExceptions("Login inválido!");
+
+            if (_userValidator.ValidatePassword(user.UserPassword))
+                throw new UserExceptions("Senha inválida!");
         }
     }
 }

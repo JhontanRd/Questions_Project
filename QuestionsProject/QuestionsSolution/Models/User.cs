@@ -18,11 +18,11 @@ namespace QuestionsSolution.Models
             UserPassword = userPassword;
         }
 
-        /*
+        // Vou deixar esse metodo, se eu não precisar eu apago
         public override string ToString()
         {
             return "User created";
         }
-        */
+        
     }
 }
