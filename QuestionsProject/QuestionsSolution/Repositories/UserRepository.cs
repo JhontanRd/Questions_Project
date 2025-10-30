@@ -12,15 +12,8 @@ namespace QuestionsSolution.Repositories
         {
             using var db = new AppDbContext();
 
-            var clientLogin = db.Users.FirstOrDefault(u => u.UserLogin == user.UserLogin && u.UserPassword == user.UserPassword);
-            if (clientLogin != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+           return db.Users.Any(u => u.UserLogin == user.UserLogin && u.UserPassword == user.UserPassword);
+            
         }
     }
 }

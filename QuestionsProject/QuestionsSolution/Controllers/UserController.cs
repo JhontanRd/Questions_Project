@@ -1,5 +1,6 @@
 ﻿using QuestionsSolution.Controllers.Exceptions;
 using QuestionsSolution.Models;
+using QuestionsSolution.Repositories.IRepositories;
 using QuestionsSolution.Validators.IValidators;
 
 
@@ -8,10 +9,12 @@ namespace QuestionsSolution.Controllers
     class UserController
     {
         private IUserValidator _userValidator;
+        private IUserRepository _userRepository;
 
-        public UserController(IUserValidator userValidator)
+        public UserController(IUserValidator userValidator, IUserRepository userRepository)
         {
             _userValidator = userValidator;
+            _userRepository = userRepository;
         }
 
         public void RequestLogin(User user)
@@ -21,6 +24,9 @@ namespace QuestionsSolution.Controllers
 
             if (_userValidator.ValidatePassword(user.UserPassword))
                 throw new UserExceptions("Senha inválida!");
+
+            if (!_userRepository.RequestLoginAccess(user))
+                throw new UserExceptions("Acesso negado, informe um login vaálido");
         }
     }
 }

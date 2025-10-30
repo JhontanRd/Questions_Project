@@ -18,8 +18,8 @@ namespace QuestionsSolution.Data
         {
             // Vou Precisar mudar a connection string para a do meu banco 
             optionsBuilder.UseSqlServer(
-                "Server=localhost;" +
-                "Database=TesteEFDB;" +
+                "Server=DESKTOP-AF6EDUF\\SQLEXPRESSS;" +
+                "Database=Teste_Login;" +
                 "Trusted_Connection=True;" +
                 "TrustServerCertificate=True;"
             );

@@ -1,6 +1,7 @@
 using QuestionsSolution.Controllers;
 using QuestionsSolution.Controllers.Exceptions;
 using QuestionsSolution.Models;
+using QuestionsSolution.Repositories;
 using QuestionsSolution.Validators;
 
 namespace QuestionsSolution
@@ -14,7 +15,7 @@ namespace QuestionsSolution
 
         private void BtnAccess_Click_1(object sender, EventArgs e)
         {
-            UserController userController = new UserController(new UserValidator());
+            UserController userController = new UserController(new UserValidator(), new UserRepository());
             User user = new User(TxtUser.Text, TxtPassword.Text);
             try
             {
