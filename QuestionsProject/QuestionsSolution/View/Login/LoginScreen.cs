@@ -27,5 +27,20 @@ namespace QuestionsSolution
                 MessageBox.Show(uX.Message, "Erro na operação ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BtnCreateUser_Click(object sender, EventArgs e)
+        {
+            UserController userController = new UserController(new UserValidator(), new UserRepository());
+            User user = new User(TxtUser.Text, TxtPassword.Text);
+            try
+            {
+                userController.RegisterRequest(user);
+                MessageBox.Show("Success", "Usuario criado");
+            }
+            catch (UserExceptions uX)
+            {
+                MessageBox.Show(uX.Message, "Erro na operação ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

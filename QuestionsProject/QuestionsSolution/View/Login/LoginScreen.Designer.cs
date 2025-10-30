@@ -109,6 +109,7 @@ namespace QuestionsSolution
             BtnCreateUser.TabIndex = 6;
             BtnCreateUser.Text = "Cadastro";
             BtnCreateUser.UseVisualStyleBackColor = true;
+            BtnCreateUser.Click += BtnCreateUser_Click;
             // 
             // LoginScreen
             // 

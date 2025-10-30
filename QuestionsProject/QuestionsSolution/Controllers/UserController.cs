@@ -26,7 +26,19 @@ namespace QuestionsSolution.Controllers
                 throw new UserExceptions("Senha inválida!");
 
             if (!_userRepository.RequestLoginAccess(user))
-                throw new UserExceptions("Acesso negado, informe um login vaálido");
+                throw new UserExceptions("Acesso negado, informe um login válido");
+        }
+        
+        public void RegisterRequest(User user)
+        {
+            if (_userValidator.ValidateLogin(user.UserLogin))
+                throw new UserExceptions("Login inválido!");
+
+            if (_userValidator.ValidatePassword(user.UserPassword))
+                throw new UserExceptions("Senha inválida!");
+
+            _userRepository.Insert(user);
+                
         }
     }
 }
