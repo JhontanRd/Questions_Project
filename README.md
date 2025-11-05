@@ -1,4 +1,4 @@
-# 📄 Quetions Project Documentation
+# 📄 Questions Project Documentation
 
 ## 💹 Status
 
