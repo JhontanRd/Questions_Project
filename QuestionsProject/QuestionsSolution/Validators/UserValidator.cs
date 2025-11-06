@@ -26,10 +26,6 @@ namespace QuestionsSolution.Validators
             {
                 return true;
             }
-            if (password.Length < 8)
-            {
-                return true;
-            }
             else
             {
                 return false;

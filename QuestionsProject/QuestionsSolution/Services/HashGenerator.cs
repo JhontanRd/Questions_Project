@@ -19,7 +19,6 @@ namespace QuestionsSolution.Services
 
                 // Converter e retorna o hash em string hexadecimal legível
                 return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-
             }
         }
     }
