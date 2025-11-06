@@ -19,7 +19,7 @@ namespace QuestionsSolution
             User user = new User(TxtUser.Text, TxtPassword.Text);
             try
             {
-                userController.RequestLogin(user);
+                userController.RequestLogin(user, TxtPassword.Text.Trim());
                 MessageBox.Show("Success", "Login funcionou");
             }
             catch (UserExceptions uX)
@@ -31,7 +31,7 @@ namespace QuestionsSolution
         private void BtnCreateUser_Click(object sender, EventArgs e)
         {
             UserController userController = new UserController(new UserValidator(), new UserRepository());
-            User user = new User(TxtUser.Text, TxtPassword.Text);
+            User user = new User(TxtUser.Text, TxtPassword.Text.Trim());
             try
             {
                 userController.RegisterRequest(user);

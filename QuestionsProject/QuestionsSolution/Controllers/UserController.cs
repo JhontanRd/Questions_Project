@@ -17,7 +17,7 @@ namespace QuestionsSolution.Controllers
             _userRepository = userRepository;
         }
 
-        public void RequestLogin(User user)
+        public void RequestLogin(User user, string plainPassword)
         {
             if (_userValidator.ValidateLogin(user.UserLogin))
                 throw new UserExceptions("Login inválido!");
@@ -25,7 +25,7 @@ namespace QuestionsSolution.Controllers
             if (_userValidator.ValidatePassword(user.UserPassword))
                 throw new UserExceptions("Senha inválida!");
 
-            if (!_userRepository.RequestLoginAccess(user))
+            if (!_userRepository.RequestLoginAccess(user, plainPassword))
                 throw new UserExceptions("Acesso negado, informe um login válido");
         }
         
