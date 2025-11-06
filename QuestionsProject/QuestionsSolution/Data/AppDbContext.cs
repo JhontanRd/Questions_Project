@@ -21,5 +21,28 @@ namespace QuestionsSolution.Data
                 "TrustServerCertificate=True;"
             );
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            var user = modelBuilder.Entity<User>();
+
+            user.ToTable("Users"); // garante o nome correto da tabela
+
+            user.HasKey(u => u.UserId);
+
+            user.Property(u => u.UserLogin)
+                .IsRequired()
+                .HasMaxLength(50);
+
+            user.Property(u => u.UserPassword)
+                .IsRequired()
+                .HasMaxLength(250);
+
+            user.Property(u => u.Salt)
+                .IsRequired()
+                .HasMaxLength(15);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
